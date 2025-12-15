@@ -1,11 +1,16 @@
 import React, { use, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import useSound from 'use-sound';
+
+import boopSfx from '../assets/sounds/boop.mp3';
 
 const Navbar = () => {
   // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
 
   const [darkMode, setDarkMode] = useState(false);
+
+  const [play] = useSound(boopSfx);
 
   useEffect(() => {
     if (darkMode) {
@@ -17,6 +22,7 @@ const Navbar = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
+    play();
     setTimeout(() => setDarkMode(!darkMode), 300);
     // setDarkMode(!darkMode);
   }
