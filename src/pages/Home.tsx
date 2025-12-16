@@ -3,18 +3,22 @@ import { xl4 } from '../assets/images'
 import { useNavigate } from 'react-router-dom';
 import { loadingService } from '../hooks/useLoading'
 import gsap from 'gsap';
+import { recipes } from '../constants';
 
 const Home = () => {
   const heroRef = useRef<HTMLHeadingElement>(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    loadingService.show()
-    navigate('/recipe');
-    setTimeout(() => {
-      loadingService.hide()
-    }, 1000)
-  };
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  const selectedRecipe = recipes[randomIndex];
+  
+  localStorage.setItem('currentRecipe', JSON.stringify(selectedRecipe));
+  
+  loadingService.show();
+  navigate('/recipe');
+  setTimeout(() => loadingService.hide(), 1000);
+};
 
   useEffect(() => {
     const el = heroRef.current;

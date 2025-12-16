@@ -20,8 +20,7 @@ const Recipe = () => {
       setTimeout(() => {
         loadingService.hide()
       }, 1000)
-    };
-    
+    }; 
     
   const getRandomRecipe = () => {
     loadingService.show()
