@@ -31,20 +31,31 @@ const Recipe = () => {
     setRecipe(recipes[randomIndex]);
   };
   return (
-    <div className='min-h-screen contain-wrapper flex flex-col items-center justify-center'>
+    // <div className='min-h-screen contain-wrapper flex flex-col items-center justify-center px-5 md:px-20 pt-24'>
+    <div className='min-h-screen contain-wrapper flex flex-col justify-center'>
       { recipe && (
-      <div className='flex flex-col items-center justify-center space-y-4'>
-        <img src={recipe.image} alt={recipe.name} className='w-50 h-50' />
-        <h2 className='text-2xl font-medium'>{recipe.name}</h2>
-        <p className='text-lg'>{recipe.description}</p>
-        <span className='font-bold'>ingredients:</span>
-        
+        <>
+        <div className='flex flex-col items-center justify-center space-y-4'>
+          <img src={recipe.image} alt={recipe.name} className='w-50 h-50' />
+          <h2 className='text-2xl font-medium'>{recipe.name}</h2>
+        </div>
+
+        <div className='flex flex-col space-y-4'>
+          <p className='text-lg mt-2'>{recipe.description}</p>
+          <span className='text-lg font-bold item-start'>ingredients:</span>
           <ul className='list-disc pl-5'>
             {recipe.ingredients.map((ingredient, index) => (
               <li key={index} className='text-lg'>{ingredient}</li>
             ))}
           </ul>
-      </div>
+          <span className='text-lg font-bold item-start'>directions:</span>
+          <div className='list-disc pl-5'>
+            {recipe.instructions.map((instruction, index) => (
+              <p key={index} className='text-lg'>{index + 1}. {instruction}</p>
+            ))}
+          </div>
+        </div>
+      </>
       )}
 
       <div className='flex items-center gap-2 justify-center mt-8'>

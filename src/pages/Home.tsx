@@ -51,12 +51,12 @@ const Home = () => {
       <div className='flex flex-col items-center space-y-4'>
         <h1
           ref={heroRef}
-          className="text-5xl font-semibold tracking-tight leading-tight"
+          className="text-4xl font-semibold tracking-tight leading-tight"
         />
         <img src={xl4} alt='xie lian' className='w-50 h-50' />
-        <button className="px-6 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 hover:scale-105 transition"
+        <button className="px-6 py-2 bg-red-800 text-white rounded-lg hover:bg-red-900 hover:scale-105 transition"
           onClick={handleClick}>
-          click here
+          let's find out
         </button>
       </div>
     </div>
