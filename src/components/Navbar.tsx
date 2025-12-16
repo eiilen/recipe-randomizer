@@ -3,14 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import useSound from 'use-sound';
 
 import boopSfx from '../assets/sounds/boop.mp3';
+import chimeSfx from '../assets/sounds/chime2.mp3';
+import { toggleMute, useMute } from '../hooks/useMute';
 
 const Navbar = () => {
   // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
-
   const [darkMode, setDarkMode] = useState(false);
-
-  const [play] = useSound(boopSfx);
+  // const [mute, setMute] = useState(false);
+  const mute = useMute();
+  
+  const [play] = useSound(boopSfx, {volume: 0.4});
+  const [chime] = useSound(chimeSfx, {volume: 0.4});
 
   useEffect(() => {
     if (darkMode) {
@@ -22,9 +26,17 @@ const Navbar = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
-    play();
+    if (!mute) {
+      play();
+    }
     setTimeout(() => setDarkMode(!darkMode), 300);
     // setDarkMode(!darkMode);
+  }
+  const handleToggleMute = () => {
+    if (mute) {
+      chime();
+    }
+    toggleMute();
   }
 
   useEffect(() => {
@@ -46,7 +58,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/'); // Replace with your target route
+    navigate('/');
   };
 
   return (
@@ -64,6 +76,7 @@ const Navbar = () => {
         </a> */}
         <div>
           <i onClick={toggleDarkMode} className={`fa-regular fa-${darkMode ? "sun" : "moon"} fa-xl hover:cursor-pointer duration-200 hover:scale-110 hover:-rotate-20 rotate-0 active:scale-75`}></i>
+          <i onClick={handleToggleMute} className={`fa-solid fa-${mute ? "volume-off" : "volume-high"} fa-xl ml-4 hover:cursor-pointer duration-200 hover:scale-110 active:scale-75`}></i>
         </div>
       </div>
     </header>
