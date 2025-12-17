@@ -5,6 +5,7 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/sounds/boop.mp3';
 import chimeSfx from '../assets/sounds/chime2.mp3';
 import { toggleMute, useMute } from '../hooks/useMute';
+import { loadingService } from '../hooks/useLoading';
 
 const Navbar = () => {
   // track if the user has scrolled down the page
@@ -58,6 +59,7 @@ const Navbar = () => {
 
   const handleClick = () => {
     navigate('/');
+    loadingService.hide()
   };
 
   return (

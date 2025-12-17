@@ -17,26 +17,28 @@ const Recipe = () => {
   const backHome = () => {
       loadingService.show()
       navigate('/');
-      setTimeout(() => {
-        loadingService.hide()
-      }, 1000)
+      setTimeout(() => loadingService.hide(), 1000)
     }; 
     
   const getRandomRecipe = () => {
   loadingService.show();
 
-  const randomIndex = Math.floor(Math.random() * recipes.length);
-  const newRecipe = { ...recipes[randomIndex] };
+  if (!recipes.length) return;
 
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * recipes.length);
+  } while (recipe && recipes[randomIndex].id === recipe.id);
+  const newRecipe = { ...recipes[randomIndex] };
   const img = new Image();
   img.src = newRecipe.image;
   img.onload = () => {
     setRecipe(newRecipe);
-    setTimeout(() => {
-      loadingService.hide()
-    }, 1000)
+    localStorage.setItem('currentRecipe', JSON.stringify(newRecipe));
+    setTimeout(() => loadingService.hide(), 1000);
   };
 };
+
   return (
     <div className='min-h-screen contain-wrapper flex flex-col justify-center'
       style={{["--viewport-padding" as any]: "clamp(1.25rem, 4vw, 5rem)",}}>

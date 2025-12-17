@@ -29,7 +29,7 @@ const Loading = () => {
 }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full gap-4">
+    <div className="absolute inset-0 flex flex-col items-center justify-center h-screen w-full gap-4 z-50">
       <img
         ref={logoRef}
         src={xl6}
