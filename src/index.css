@@ -5,7 +5,7 @@
 
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
-  --viewport-padding: clamp(1.25rem, 4vw, 5rem);
+  /* --viewport-padding: clamp(1.25rem, 4vw, 5rem); */
 }
 
 html,

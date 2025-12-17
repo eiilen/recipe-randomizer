@@ -31,8 +31,8 @@ const Recipe = () => {
     setRecipe(recipes[randomIndex]);
   };
   return (
-    // <div className='min-h-screen contain-wrapper flex flex-col items-center justify-center px-5 md:px-20 pt-24'>
-    <div className='min-h-screen contain-wrapper flex flex-col justify-center'>
+    <div className='min-h-screen contain-wrapper flex flex-col justify-center'
+      style={{["--viewport-padding" as any]: "clamp(1.25rem, 4vw, 5rem)",}}>
       { recipe && (
         <>
         <div className='flex flex-col items-center justify-center space-y-4'>
@@ -48,7 +48,7 @@ const Recipe = () => {
               <li key={index} className='text-lg'>{ingredient}</li>
             ))}
           </ul>
-          <span className='text-lg font-bold item-start'>directions:</span>
+          <span className='text-lg font-bold item-start'>🍅 directions:</span>
           <div className='list-disc pl-5'>
             {recipe.instructions.map((instruction, index) => (
               <p key={index} className='text-lg'>{index + 1}. {instruction}</p>

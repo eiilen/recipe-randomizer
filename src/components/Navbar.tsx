@@ -82,7 +82,7 @@ const Navbar = () => {
         </a> */}
         <div>
           <i onClick={toggleDarkMode} className={`fa-regular fa-${darkMode ? "sun" : "moon"} fa-xl hover:cursor-pointer duration-200 hover:scale-110 hover:-rotate-20 rotate-0 active:scale-75`}></i>
-          <i onClick={handleToggleMute} className={`fa-solid fa-${mute ? "volume-off" : "volume-high"} fa-xl ml-4 hover:cursor-pointer duration-200 hover:scale-110 active:scale-75`}></i>
+          <i onClick={handleToggleMute} className={`fa-solid fa-${mute ? "volume-xmark" : "volume-high"} fa-lg ml-4 hover:cursor-pointer duration-200 hover:scale-110 active:scale-75`}></i>
         </div>
       </div>
     </header>

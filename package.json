@@ -1,8 +1,9 @@
 {
-  "name": "recipe_randomizer",
+  "name": "recipe-randomizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://eiilen.github.io/recipe-randomizer",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
