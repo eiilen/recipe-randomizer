@@ -48,7 +48,7 @@ const Recipe = () => {
               <li key={index} className='text-lg'>{ingredient}</li>
             ))}
           </ul>
-          <span className='text-lg font-bold item-start'>🍅 directions:</span>
+          <span className='text-lg font-bold item-start'>🍅 instructions:</span>
           <div className='list-disc pl-5'>
             {recipe.instructions.map((instruction, index) => (
               <p key={index} className='text-lg'>{index + 1}. {instruction}</p>
