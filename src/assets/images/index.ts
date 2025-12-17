@@ -1,6 +1,3 @@
-import bg1 from './bg_1.jpg';
-import bg2 from './bg_2.jpg';
-import bg3 from './bg_3.jpg';
 import hc1 from './hua_cheng_1.png';
 import hc2 from './hua_cheng_2.png';
 import hc3 from './hua_cheng_3.png';
@@ -21,9 +18,6 @@ import xl8 from './xie_lian_8.png';
 import xl9 from './xie_lian_9.png';
 
 export {
-    bg1,
-    bg2,
-    bg3,
     hc1,
     hc2,
     hc3,
