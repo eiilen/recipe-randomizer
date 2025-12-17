@@ -37,21 +37,21 @@ const Recipe = () => {
         <>
         <div className='flex flex-col items-center justify-center space-y-4'>
           <img src={recipe.image} alt={recipe.name} className='w-50 h-50' />
-          <h2 className='text-2xl font-medium'>{recipe.name}</h2>
+          <h2 className='text-xl md:text-2xl font-medium'>{recipe.name}</h2>
         </div>
 
         <div className='flex flex-col space-y-4'>
-          <p className='text-lg mt-2'>{recipe.description}</p>
-          <span className='text-lg font-bold item-start'>ingredients:</span>
+          <p className='text-sm md:text-lg mt-2'>{recipe.description}</p>
+          <span className='text-sm md:text-lg font-bold item-start'>ingredients:</span>
           <ul className='list-disc pl-5'>
             {recipe.ingredients.map((ingredient, index) => (
-              <li key={index} className='text-lg'>{ingredient}</li>
+              <li key={index} className='text-sm md:text-lg'>{ingredient}</li>
             ))}
           </ul>
-          <span className='text-lg font-bold item-start'>🍅 instructions:</span>
+          <span className='text-sm md:text-lg font-bold item-start'>🍅 instructions:</span>
           <div className='list-disc pl-5'>
             {recipe.instructions.map((instruction, index) => (
-              <p key={index} className='text-lg'>{index + 1}. {instruction}</p>
+              <p key={index} className='text-sm md:text-lg'>{index + 1}. {instruction}</p>
             ))}
           </div>
         </div>
@@ -59,11 +59,11 @@ const Recipe = () => {
       )}
 
       <div className='flex items-center gap-2 justify-center mt-8'>
-        <button className="px-6 py-2 bg-white text-red-800 rounded border border-red-800 dark:border-0 hover:bg-red-800 hover:text-white transition"
+        <button className="py-1.5 px-3 text-sm md:text-base md:px-5 md:py-2 bg-white text-red-800 rounded border border-red-800 dark:border-0 hover:bg-red-800 hover:text-white transition"
           onClick={backHome}>
           home
         </button>
-        <button className="px-6 py-2 bg-red-800 text-white rounded border border-red-800 dark:border-0 hover:bg-white hover:text-red-800 transition"
+        <button className="py-1.5 px-3 text-sm md:text-base md:px-5 md:py-2 bg-red-800 text-white rounded border border-red-800 dark:border-0 hover:bg-white hover:text-red-800 transition"
           onClick={getRandomRecipe}>
           try again
         </button>

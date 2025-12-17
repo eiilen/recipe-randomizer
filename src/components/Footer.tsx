@@ -35,7 +35,7 @@ const Footer = () => {
   }
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed bottom-2 md:bottom-4 right-2 md:right-4">
       {/* <i className={`fa-regular fa-${!isPlayingMusic ? 'circle-play' : 'circle-pause'} fa-xl hover:cursor-pointer hover:scale-110 active:scale-75`}
         onClick={() => setIsPlayingMusic(p => !p)}>
       </i> */}
@@ -43,7 +43,7 @@ const Footer = () => {
       <img src={!isPlayingMusic ? hc7 : hc8} alt='hc' 
         onClick={() => setIsPlayingMusic(p => !p)}
         onMouseOver={handleHover}
-        className='w-20 h-20 hover:cursor-pointer hover:scale-110 active:scale-75' />
+        className='w-12 md:w-18 h-12 md:h-18 hover:cursor-pointer hover:scale-110 active:scale-75' />
     </div>
   )
 }

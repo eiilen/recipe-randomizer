@@ -36,7 +36,7 @@ const Loading = () => {
         alt="logo"
         className="w-20 h-20"
       />
-      <p className="text-lg">Loading
+      <p className="text-sm md:text-lg">Loading
         <span ref={dotsRef} style={{ display: "inline-block", width: "1.5em" }}>
         </span>
       </p>
